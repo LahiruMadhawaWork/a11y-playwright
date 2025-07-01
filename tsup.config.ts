@@ -4,12 +4,6 @@ export default defineConfig({
     entry: ['src/utils/AccessibilityGeneralizedFunctions.ts'],
     dts: true,
     external: [
-        'playwright-core',
-        'sqlite',
-        'sqlite3',
-        'express',
-        'handlebars',
-        'ansi-to-html',
-        'commander'
+        'playwright-core'
     ],
 })
