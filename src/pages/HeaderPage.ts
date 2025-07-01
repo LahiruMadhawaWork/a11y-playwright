@@ -22,9 +22,9 @@ export default class HeaderPage {
     /**
     * accessibility methods
     */
-    async checkAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page: Page, testInfo: TestInfo, strDisableRulesArray: string[], strCategory: string) {
+    async checkAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page: Page, testInfo: TestInfo, strDisableRulesArray: string[], strWcagaaTagsArray: string[], strCategory: string) {
         if(this.isMobile==false) {
-            let wcagaaTagsArray: string[] = ['wcag2a', 'wcag2aa', 'wcag2aaa', 'wcag21a', 'wcag21aa', 'wcag21aaa', 'wcag22aa', 'best-practice', 'ACT'];
+            let wcagaaTagsArray: string[] = strWcagaaTagsArray;
             let disableRulesArray: string[] = strDisableRulesArray;
             const axeBuilderObj = await this.base.checkAccessibilityForWCAGTagsAndRulesDisabled(page, wcagaaTagsArray, disableRulesArray);
             await this.base.attachAccessibilityResultsJsonToReport(testInfo, axeBuilderObj, strCategory + " Page accessibility results when Tags And Rules Disabled");

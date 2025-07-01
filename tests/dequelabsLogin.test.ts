@@ -52,8 +52,9 @@ test.describe("User Authentication test scenario @assystwebnew", () => {
             //Adding scenario information - playwright report
             testInfo.annotations.push({ type: 'scenario-when-step-01', description: 'When conduct accessibility verification for the whole Home page' });
             // test step implementation in code
+            let wcagaaTagsArray: string[] = ['wcag2a', 'wcag2aa', 'wcag2aaa', 'wcag21a', 'wcag21aa', 'wcag21aaa', 'wcag22aa', 'best-practice', 'ACT'];
             let disableRulesArray: string[] = ['document-title', 'html-has-lang', 'landmark-one-main', 'page-has-heading-one'];
-            axeBuilderObject = await objAccessibilityGeneralizedFunctions.generalizedCheckAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page, testInfo, disableRulesArray, "Home");
+            axeBuilderObject = await objAccessibilityGeneralizedFunctions.generalizedCheckAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page, testInfo, disableRulesArray, wcagaaTagsArray, "Home");
             if (!axeBuilderObject) {
                 throw new Error("Accessibility check did not return results.");
             }

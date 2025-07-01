@@ -24,8 +24,8 @@ export default class AccessibilityGeneralizeFunctions {
      * accessibility methods - Generalized Methods
      */    
     //01 - accessibility generalized methods - verification generalized method - return results in a array
-    async generalizedCheckAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page: Page, testInfo: TestInfo, strDisableRulesArray: string[], strCategory: string) {
-        return await this.objHeaderPage.checkAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page, testInfo, strDisableRulesArray, strCategory);
+    async generalizedCheckAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page: Page, testInfo: TestInfo, strDisableRulesArray: string[], strWcagaaTagsArray: string[], strCategory: string) {
+        return await this.objHeaderPage.checkAccessibilityBasedOnWCAGAATagsAndRulesDisabled(page, testInfo, strDisableRulesArray, strWcagaaTagsArray, strCategory);
     }
     //02 - accessibility generalized methods - assertion generalized method
     async generalizedAssertAccessibilityResults(axeBuilderObject: AxeResults, testInfo: TestInfo, strCategory: string) {
