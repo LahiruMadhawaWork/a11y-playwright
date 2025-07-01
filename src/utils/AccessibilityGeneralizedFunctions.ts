@@ -44,3 +44,5 @@ export default class AccessibilityGeneralizeFunctions {
         await this.objAssert.checkAccessibilityViolations(axeBuilderObj);
     } 
 }
+
+export { AccessibilityGeneralizeFunctions as AccessibilityGeneralizedFunctions };

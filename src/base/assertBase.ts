@@ -52,3 +52,5 @@ export default class Assert {
         expect(axeBuilderObject.violations).toEqual([]);
     }
 }
+
+export { Assert as AssertBase };

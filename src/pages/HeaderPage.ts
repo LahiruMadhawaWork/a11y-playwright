@@ -44,3 +44,5 @@ export default class HeaderPage {
         } 
     }
 }
+
+export { HeaderPage as HeaderPage };

@@ -105,3 +105,5 @@ export default class PlaywrightWrapper {
     //     return response;
     // }
 }
+
+export { PlaywrightWrapper as PlaywrightBase };

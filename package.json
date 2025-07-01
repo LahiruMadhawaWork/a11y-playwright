@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "npx playwright install",
     "test-ui": "npx playwright test --ui --config=playwright.config.ts",
-    "test": "playwright test --workers 2 --config=playwright.basic.config.ts",
+    "test": "playwright test --workers 1 --config=playwright.config.ts",
     "test-coverage": "npx playwright test --coverage --config=playwright.config.ts",
     "test-report": "npx playwright show-report",
     "tsc": "tsc",
@@ -45,7 +45,7 @@
     "tsup": "^8.5.0",
     "winston": "^3.17.0"
   },
-  "main": "dist/a11y-playwright.js",
-  "module": "dist/a11y-playwright.mjs",
-  "types": "dist/a11y-playwright.d.ts"
+  "main": "dist/AccessibilityGeneralizedFunctions.js",
+  "module": "dist/AccessibilityGeneralizedFunctions.mjs",
+  "types": "dist/AccessibilityGeneralizedFunctions.d.ts"
 }
