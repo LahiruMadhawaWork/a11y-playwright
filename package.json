@@ -1,0 +1,51 @@
+{
+  "name": "a11y-playwright",
+  "version": "0.0.1",
+  "description": "A Playwright generalized function for accessibility testing",
+  "scripts": {
+    "postinstall": "npx playwright install",
+    "test-ui": "npx playwright test --ui --config=playwright.config.ts",
+    "test": "playwright test --workers 2 --config=playwright.basic.config.ts",
+    "test-coverage": "npx playwright test --coverage --config=playwright.config.ts",
+    "test-report": "npx playwright show-report",
+    "tsc": "tsc",
+    "build": "tsup",
+    "release": "npm publish"
+  },
+  "bin": {
+    "a11y-playwright": "./dist/utils/AccessibilityGeneralizedFunctions.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LahiruMadhawaWork/a11y-playwright.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LahiruMadhawaWork/a11y-playwright/issues"
+  },
+  "homepage": "https://github.com/LahiruMadhawaWork/a11y-playwright#readme",
+  "keywords": [
+    "playwright test runner",
+    "playwright accessibility testing",
+    "playwright axe-core",
+    "a11y-playwright",
+    "lahiru", "madhawa"
+  ],
+  "author": "Lahiru Madhawa",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.7",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "winston": "^3.17.0"
+  },
+  "main": "dist/a11y-playwright.js",
+  "module": "dist/a11y-playwright.mjs",
+  "types": "dist/a11y-playwright.d.ts"
+}
