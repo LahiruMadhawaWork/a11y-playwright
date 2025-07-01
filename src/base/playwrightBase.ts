@@ -3,7 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { AxeResults } from "axe-core";
 
 export default class PlaywrightWrapper {
-    private axeBuilder: AxeResults;    
+    private axeBuilder!: AxeResults;    
 
     constructor(private page: Page) { }
 

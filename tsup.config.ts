@@ -4,6 +4,11 @@ export default defineConfig({
     entry: ['src/utils/AccessibilityGeneralizedFunctions.ts'],
     dts: true,
     external: [
-        'playwright-core'
+        'playwright-core',
+        'playwright',
+        '../package.json',
+        'axe-core',
+        'playwright-test',
+        '../transform/esmLoader'
     ],
 })
