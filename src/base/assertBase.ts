@@ -45,12 +45,7 @@ export default class Assert {
         } else {
             throw new Error("Please set the fullPageScreenshotStatus!");
         }
-    }
-
-    //accessibility methods
-    async checkAccessibilityViolations(axeBuilderObject: AxeResults) {
-        expect(axeBuilderObject.violations).toEqual([]);
-    }
+    }    
 }
 
 export { Assert as AssertBase };

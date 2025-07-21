@@ -1,10 +1,6 @@
 import { Page, TestInfo, Locator } from "@playwright/test";
-import AxeBuilder from "@axe-core/playwright";
-import { AxeResults } from "axe-core";
 
-export default class PlaywrightWrapper {
-    private axeBuilder!: AxeResults;    
-
+export default class PlaywrightWrapper {      
     constructor(private page: Page) { }
 
     //ui methods
@@ -44,49 +40,7 @@ export default class PlaywrightWrapper {
         img = await page.screenshot(
             { path: `./test-results/screenshots/${stepName}.png`, type: "png" })
         return img;
-    }    
-
-    //ui accessibility methods
-    async checkAccessibilityForWholePage(page: Page) {
-        this.axeBuilder = await new AxeBuilder({ page }).analyze();
-        return this.axeBuilder;
-    }
-
-    async checkAccessibilityForSpecificElementOfThePage(page: Page, elementLocator: string) {
-        this.axeBuilder = await new AxeBuilder({ page })
-            .include(elementLocator)    
-            .analyze();
-        return this.axeBuilder;
-    }
-
-    async checkAccessibilityExcludingSpecificElementOfThePage(page: Page, elementLocator: string) {
-        this.axeBuilder = await new AxeBuilder({ page })
-            .exclude(elementLocator)
-            .analyze();
-        return this.axeBuilder;
-    }
-
-    async checkAccessibilityForWCAGTags(page: Page, tagsArray: string[]) {
-        this.axeBuilder = await new AxeBuilder({ page })
-            .withTags(tagsArray)
-            .analyze();        
-        return this.axeBuilder;
-    }
-
-    async checkAccessibilityForWCAGTagsAndRulesDisabled(page: Page, tagsArray: string[], disableRulesArray: string[]) {
-        this.axeBuilder = await new AxeBuilder({ page })
-            .withTags(tagsArray)
-            .disableRules(disableRulesArray)
-            .analyze();        
-        return this.axeBuilder;
-    }
-
-    async attachAccessibilityResultsJsonToReport(testInfo: TestInfo, axeBuilderJsonObject: AxeResults, resultsName: string){
-        await testInfo.attach(resultsName, {
-            body: JSON.stringify(axeBuilderJsonObject, null, 2),
-            contentType: "application/json"
-        })
-    }
+    }       
     
     //ui api methods
     // async getRequest(baseURL: string, paramsList: ) {
